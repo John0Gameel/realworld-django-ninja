@@ -21,16 +21,21 @@ dependencies = [
     "email-validator==2.1.1",
     "markdown==3.4.3",
     "parameterized==0.9.0",
-    "psycopg2==2.9.6",
+    "psycopg2==2.9.13",
     "pydantic>=2.9.2",
     "sqlparse==0.4.4",
     "typing-extensions>=4.12.2",
+    "factory-boy>=3.3.3",
+    "pytest-factoryboy>=2.8.1",
+    "schemathesis>=4.32.7",
 ]
 
 [project.optional-dependencies]
 dev = [
     "ty==0.0.1a7",
     "ruff==0.5.1",
+    "pytest==9.2.0",
+    "pytest-django==4.14.0",
 ]
 
 [tool.setuptools]
@@ -87,3 +92,7 @@ ignore = [
 unresolved-attribute = "ignore"  # tradeoff since some schemas define fields from Meta
 unresolved-import = "ignore"  # not setting this for now but this line should be removed
 possibly-unbound-attribute = "ignore"  # too much false positive for now with Django QuerySet
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+

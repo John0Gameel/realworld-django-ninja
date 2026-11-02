@@ -93,3 +93,7 @@ db.sqlite3
 # Custom
 notes.md
 notes.txt
+
+#Postman
+postman/
+.postman/
