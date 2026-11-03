@@ -25,9 +25,6 @@ dependencies = [
     "pydantic>=2.9.2",
     "sqlparse==0.4.4",
     "typing-extensions>=4.12.2",
-    "factory-boy>=3.3.3",
-    "pytest-factoryboy>=2.8.1",
-    "schemathesis>=4.32.7",
 ]
 
 [project.optional-dependencies]
@@ -36,6 +33,12 @@ dev = [
     "ruff==0.5.1",
     "pytest==9.2.0",
     "pytest-django==4.14.0",
+    "factory-boy>=3.3.3",
+    "pytest-factoryboy>=2.8.1",
+    "schemathesis>=4.32.7",
+    "glom>=25.12.0",
+    "datamodel-code-generator>=0.88.0",
+    "requests>=2.34.2",
 ]
 
 [tool.setuptools]
@@ -95,4 +98,9 @@ possibly-unbound-attribute = "ignore"  # too much false positive for now with Dj
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "config.settings"
+
+[dependency-groups]
+dev = [
+    "requests>=2.34.2",
+]
 
